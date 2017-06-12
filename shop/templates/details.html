@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block inhalt %}
+    <h3> {{ artikel.abez}}</h3>
+
+    <ul>
+        <li> Artikelnummmer: {{ artikel.anr }}</li>
+        <li> Preis: {{ artikel.npreis }}</li>
+        <li> Verfügbare Stückzahl: {{ artikel.vstueck }}</li>
+        <li> Artikelinformation: {{ artikel.info }}</li>
+    </ul>
+
+    <h3> Feedback: </h3>
+    {% for f in feedback %}
+        <p>
+        Von {{ f.kunde.name }} am {{ f.fdatum }}:
+        </br> {{ f.fbemerk }}
+        </p>
+    {% endfor %}
+{% endblock %}

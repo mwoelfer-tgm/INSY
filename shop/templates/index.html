@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block inhalt %}
+<ul>
+    {% for art in artikel %}
+        <li>
+            <a href="{% url 'details' art.anr%}">
+                    {{  art.abez }} - {{ art.npreis}}€
+            </a>
+        </li>
+    {% endfor %}
+
+
+</ul>
+{% endblock %}
